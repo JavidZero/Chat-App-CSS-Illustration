@@ -1,0 +1,386 @@
+:root {
+
+    /* Colors */
+
+    /* Primary */
+
+    /* Text */
+        /* Sub-heading at the top of the app UI*/
+        --text-username: hsl(276, 100%, 81%);
+        /* Chat on the left */
+        --text-chat-left: hsl(276, 55%, 52%);
+        /* Chat on the right */
+        --text-chat-right: hsl(271, 15%, 43%);
+        /* Placeholder Text */
+        --text-placeholder: hsl(206, 6%, 79%);
+        /* Main heading */
+        --text-main-heading: hsl(271, 36%, 24%);
+        /* Paragraph */
+        --text-paragraph: hsl(270, 7%, 64%);
+
+
+    /* Gradients */
+        /* These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient: */
+
+        --first-gradient: linear-gradient(225deg,hsl(293, 100%, 63%),hsl(264, 100%, 61%));
+        --second-gradient: linear-gradient(to right,hsl(264, 100%, 61%),hsl(293, 100%, 63%));
+        --third-gradient: linear-gradient(to right,hsl(293, 100%, 63%),hsl(264, 100%, 61%));
+        --light-magenta: hsl(293, 100%, 63%);
+        --light-violet: hsl(264, 100%, 61%);
+
+    /* Secondary */
+
+        --white: hsl(0, 0%, 100%);
+        --white-2: hsla(0, 0%, 97%, 0.6);
+        /* App Background */
+        --background-app: hsl(270, 20%, 96%);
+        /* Submit Button Background */
+        --background-submit-btn: hsl(271, 36%, 24%);
+        /* Radio button outline */
+        --radio-button-outline: hsl(289, 100%, 72%);
+}
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 144rem;
+    width: 100%;
+    min-height: calc(100vh - 32px);
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: var(--white-2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    max-width: 42rem;
+    min-width: 25rem;
+    width: 30%;
+    height: 87.5%;
+    background-image: var(--first-gradient);
+    position: absolute;
+    top: 0;
+    left: -5rem;
+    border-radius: 0 0 20rem 20rem;
+}
+
+.container::after {
+    content: '';
+    max-width: 42rem;
+    min-width: 25rem;
+    width: 30%;
+    height: 87.5%;
+    background-color: var(--background-app);
+    position: absolute;
+    bottom: 0;
+    right: -5rem;
+    border-radius: 20rem 20rem 0 0;
+}
+
+.wrapper {
+    max-width: 84rem;
+    width: 100%;
+    min-height: 54rem;
+    padding: 2rem 2rem;
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.app {
+    max-width: 25rem;
+    width: 25rem;
+    height: 54rem;
+    border: 1rem solid var(--white);
+    border-radius: 3rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .2);
+    background-color: var(--background-app);
+}
+
+.app-header {
+    width: 100%;
+    height: 6.5rem;
+    background-image: var(--second-gradient);
+    border-radius: 2rem 2rem 1rem 1rem;
+    box-shadow: 0 .7rem 1.2rem rgba(0, 0, 0, .2);
+    position: relative;
+}
+
+.app-header-speaker {
+    width: 13rem;
+    height: 2rem;
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    border-radius: 0 0 1rem 1rem;
+}
+
+.app-header-user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+}
+
+.app-header-user-btn {
+    width: 1rem;
+    height: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-header-user-btn .btn {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+}
+
+.app-header-user-btn-left {
+
+}
+
+.app-header-user-btn-right {
+  
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-right: auto;
+}
+
+.profile-img {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+}
+
+.profile-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name span:nth-child(1) {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.profile-name span:nth-child(2) {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-username);
+}
+
+.app-body {
+    width: 100%;
+    height: 45.5rem;
+    padding: 1.2rem .7rem;
+
+    position: relative;
+}
+
+.app-message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.app-message-text {
+    max-width: 13rem;
+}
+
+.app-message-text p {
+    font-size: .9rem;
+    padding: .7rem .5rem;
+}
+
+.app-message-left {
+    justify-content: flex-start;
+}
+
+.app-message-text-left p {
+    color: var(--text-chat-left);
+    background-color: hsla(276, 100%, 81%, 0.59);
+    border-radius: 1rem 1rem 1rem 0;
+}
+
+.app-message-right {
+    justify-content: flex-end;
+}
+
+.app-message-text-right p {
+    color: var(--text-chat-right);
+    background-color: var(--white);
+    border-radius: 1rem 1rem 0 1rem;
+}
+
+
+.app-message-img {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.app-message-img img {
+    width: 4.2rem;
+    border-radius: 1rem;
+}
+
+.app-message-submit {
+    width: 22rem;
+    height: 3rem;
+    padding: .2rem .3rem;
+    background-color: var(--white);
+    border-radius: 3rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.app-message-submit p {
+    font-size: .9rem;
+    color: var(--text-placeholder);
+}
+
+.app-message-submit span {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--background-submit-btn);
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+.app-message-price {
+    width: 16rem;
+    height: 4rem;
+    background-image: var(--third-gradient);
+    border-radius: 1rem 1rem 1rem 0;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--white);
+}
+
+.app-message-price-radio {
+    width: 2.3rem;
+    height: 2.3rem;
+    border: 1px solid var(--radio-button-outline);
+    border-radius: 50%;
+}
+
+.app-message-price p {
+    font-size: .9rem;
+}
+
+.app-message-price h6 {
+    margin-left: auto;
+    font-size: 1.3rem;
+}
+
+/* Text Part */
+.text {
+    max-width: 44.5rem;
+    width: 53%;
+}
+
+.text h1 {
+    color: var(--text-main-heading);
+    margin-bottom: 2rem;
+}
+
+.text p {
+    color: var(--text-paragraph);
+    line-height: 1.5;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+        padding: 7rem 2rem;
+    }
+
+
+    /* Container */
+    .container::before {
+        content: '';
+        width: 42rem;
+        height: 67.5%;
+        background-image: var(--first-gradient);
+        position: absolute;
+        top: 0;
+        left: -25rem;
+        border-radius: 0 0 20rem 20rem;
+    }
+
+    .container::after {
+        content: '';
+        width: 42rem;
+        height: 67.5%;
+        background-color: var(--background-app);
+        position: absolute;
+        bottom: 0;
+        right: -25rem;
+        border-radius: 20rem 20rem 0 0;
+    }
+    
+    .app {
+        margin-bottom: 6rem;
+    }
+
+    /* Text Part */
+    .text {
+        width: 100%;
+        text-align: center;
+    }
+
+}
